@@ -9,8 +9,7 @@ items = response.json()
 
 # Store latest youtube video's link in a variable
 latestVideoId = items[u'items'][0][u'id'][u'videoId']
-# latestVideoLink = 'https://youtu.be/' + latestVideoId
-latestVideoLink = 'https://youtube.com'
+latestVideoLink = 'https://youtu.be/' + latestVideoId
 
 # Open chrome
 PATH = "/Users/jeremiah/Documents/Code/update-bios/chromedriver"
@@ -31,7 +30,7 @@ def click_button(xpath):
 
 # 1. Navigate to instagram
 driver.get("https://www.instagram.com")
-time.sleep(2)
+time.sleep(1)
 
 
 # login
@@ -39,16 +38,16 @@ enter_input('/html/body/div[1]/section/main/article/div[2]/div[1]/div/form/div/d
 enter_input('/html/body/div[1]/section/main/article/div[2]/div[1]/div/form/div/div[2]/div/label/input', instaPassword)
 click_button('/html/body/div[1]/section/main/article/div[2]/div[1]/div/form/div/div[3]')  # login button
 
-time.sleep(4)
+time.sleep(2)
 driver.get('https://www.instagram.com/accounts/edit/')
 
 # update bio with latest video link
 enter_input('/html/body/div[1]/section/main/div/article/form/div[3]/div/div/input', latestVideoLink)
-# click_button('/html/body/div[1]/section/main/div/article/form/div[10]/div/div/button')  # save changes button
+click_button('/html/body/div[1]/section/main/div/article/form/div[10]/div/div/button')  # save changes button
 time.sleep(2)   # wait for success
 
 
-print("Inagram bio was udpated with:" + latestVideoLink)
+print("Instagram bio was updated with:" + latestVideoLink)
 
 # 2. Navigate to twitter
 driver.get("https://www.twitter.com")
@@ -63,7 +62,8 @@ driver.get('https://twitter.com/settings/profile')
 
 time.sleep(1)
 enter_input('//*[@id="layers"]/div[2]/div/div/div/div/div/div[2]/div[2]/div/div[2]/div/div/div[6]/label/div/div[2]/div/input', latestVideoLink)
-# click_button('/html/body/div/div/div/div[2]/main/div/div/div[1]/div/div/div/div[3]/div')  # save update
+click_button('/html/body/div/div/div/div[1]/div[2]/div/div/div/div/div/div[2]/div[2]/div/div[1]/div/div/div/div[3]/div')# save update
+
 
 print("Twitter bio was updated with:" + latestVideoLink)
 
