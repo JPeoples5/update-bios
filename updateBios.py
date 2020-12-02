@@ -72,15 +72,3 @@ driver.quit()
 
 
 print('################### Until The Next Time, Jeremiah ##########################')
-
-# def enter_input(xpath, input_text):
-#     # will wait UP TO 5s for the input element
-#     timeout = 5
-#     try:
-#         input_element = ec.presence_of_element_located((By.XPATH, xpath))
-#         WebDriverWait(driver, timeout).until(input_element)
-#         # input_element.clear()
-#     except TimeoutException:
-#         print "Timed out waiting for page to load"
-#
-#     input_element.send_keys(input_text)
